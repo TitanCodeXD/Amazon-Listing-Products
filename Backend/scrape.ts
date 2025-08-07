@@ -7,13 +7,16 @@ export async function scrapeAmazon(keyword: string) {
     const encodedKeyword = encodeURIComponent(keyword);
     const url = `https://www.amazon.com/s?k=${encodedKeyword}`;
 
-    const response = await axios.get(url, {
-        headers: {
-            'User-Agent':
-                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36', // Due to problems, I had to search on stack overflow how to solve it, and to prevent Amazon from thinking they are bots, I had to pass this header
-            'Accept-Language': 'en-US,en;q=0.9', // This header is also important to prevent Amazon from thinking they are bots
-        },
-    });
+    const response = await axios.get(
+        `https://www.amazon.com.br/s?k=${encodeURIComponent(keyword)}`,
+        {
+            headers: {
+                'User-Agent':
+                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept-Language': 'en-US,en;q=0.9',
+            },
+        }
+    );
 
     const dom = new JSDOM(response.data);
     const document = dom.window.document;

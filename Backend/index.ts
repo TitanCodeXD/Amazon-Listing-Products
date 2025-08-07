@@ -1,6 +1,7 @@
 //imports
 import express from 'express';
 import { scrapeAmazon } from './scrape'; //
+import cors from 'cors';
 
 const app = express();
 app.get('/', (req, res) => {
@@ -8,6 +9,8 @@ app.get('/', (req, res) => {
 });
 
 const PORT = 3000;
+
+app.use(cors());
 
 // API endpoint to scrape Amazon based on a keyword query parameter
 app.get('/api/scrape', async (req, res) => {
