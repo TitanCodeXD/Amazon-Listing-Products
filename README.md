@@ -13,10 +13,15 @@ A simple script to scrape Amazon product listings from the first page of search 
 ```bash
 cd backend
 bun install
-bun run dev```
+bun run dev
+```
 
 ### Frontend
 
-```cd frontend
+```bash
+cd frontend
 npm install
-npm run dev```
+npm run dev
+```
+
+and visit http://localhost:5173
