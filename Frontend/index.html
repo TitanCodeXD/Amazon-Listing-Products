@@ -1,13 +1,15 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Amazon Scraper</title>
         <link rel="stylesheet" href="/src/style.css" />
+        <title>Amazon Scraper</title>
     </head>
     <body>
         <h1>Amazon Scraper</h1>
-        <input type="text" id="keyword" placeholder="Enter a product keyword..." />
-        <button id="searchBtn">Search</button>
+        <div class="search-container">
+            <input type="text" id="keyword" placeholder="Enter a product keyword...ex: mouse" />
+            <button id="searchBtn">Search</button>
+        </div>
         <div id="results"></div>
 
         <script type="module" src="/src/main.js"></script>
